@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+  <title>Database</title>
+<script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous">
+</script>
+
+  <script type="text/javascript">
+  var spData = null;
+  function doData(json) {
+      spData = json.feed.entry;
+  }
+  
+  function drawCell(tr, val) {
+      var td = $("<td/>");
+      tr.append(td);
+      td.append(val);
+      return td;
+  }
+  function drawRow(table, rowData) {
+    if (rowData == null) return null;
+    if (rowData.length == 0) return null;
+    var tr = $("<tr/>");
+    table.append(tr);
+    for(var c=0; c<rowData.length; c++) {
+      drawCell(tr, rowData[c]);
+    }
+    return tr;
+  }
+  
+  function drawTable(parent) {
+    var table = $("<table/>");
+    parent.append(table);
+    return table;
+  }
+  
+  function readData(parent) {
+      var data = spData;
+      var table = drawTable(parent);
+      var rowData = [];
+      
+      for(var r=0; r<data.length; r++) {
+          var cell = data[r]["gs$cell"];
+          var val = cell["$t"];
+          if (cell.col == 1) {
+              drawRow(table, rowData);
+              rowData = [];
+          }
+          rowData.push(val);
+      }
+      drawRow(table, rowData);
+  }
+  $(document).ready(function(){
+      readData($("#data"));
+  });
+
+  </script>   
+<script src="https://spreadsheets.google.com/feeds/cells/19IvJbqkDyoDlE4cj_jJH4Kh-gSln4khaMESAwRCXN0A/1/public/values?alt=json-in-script&callback=doData"></script>
+
+<style type="text/css">
+  table {border-collapse: collapse;border-color:#93a1a1;font-family:Arial, sans-serif;font-size:14px; width: 100%;}
+
+  th {border: thin solid black; padding: 3px;background-color:#fdf6e3;}
+  td {border: thin solid black; padding: 3px;background-color:#fdf6e3;}
+
+  tr.head th {background-color:#657b83; border-bottom: 4px double black;}
+  tr.head td {background-color:#657b83; border-bottom: 4px double black;}
+
+  span.linetitle {font-weight: bold;}
+  div.lineclass {font-style: italic;}
+  .title, .result {width: 80%;}
+  .notes {width: 15%;}
+  h1, h2 {text-align: center;}
+  body {margin: 12px; font-size: 12px;}
+</style>
+
+<style type="text/css" media="print">
+  form {display: none;}
+</style>
+
+</head>
+
+<body>
+<h1>Jalpaiguri Government Engineering College</h1>
+<h2>Computer Science & Engineering, 2022</h2>
+<div id="data"/>
+</body>
+</html> 
