@@ -56,6 +56,8 @@ li a:hover:not(.active) {
     if (rowData.length == 0) return null;
     var tr = $("<tr/>");
     table.append(tr);
+    // we are starting column value from 1 so as to ignore timestamp.
+    // timestamp field can be good use case when the submission time is needed for evaluation.
     for(var c=1; c<rowData.length; c++) {
       drawCell(tr, rowData[c]);
     }
