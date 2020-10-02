@@ -2,25 +2,6 @@
 <html>
 <head>
   <title>Database</title>
-<style> 
-.tg  {border-collapse:collapse;border-color:#93a1a1;border-spacing:0;margin:0px auto;}
-.tg td{background-color:#fdf6e3;border-color:#93a1a1;border-style:solid;border-width:1px;color:#002b36;
-  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{background-color:#657b83;border-color:#93a1a1;border-style:solid;border-width:1px;color:#fdf6e3;
-  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-ul38{position:-webkit-sticky;position:sticky;text-align:left;top:-1px;vertical-align:top;will-change:transform}
-.tg .tg-alz1{background-color:#eee8d5;text-align:left;vertical-align:top}
-.tg .tg-eidr{background-color:#ffffff;position:-webkit-sticky;position:sticky;text-align:left;top:-1px;vertical-align:top;
-  will-change:transform}
-.tg .tg-0lax{text-align:left;vertical-align:top}
-.tg-sort-header::-moz-selection{background:0 0}
-.tg-sort-header::selection{background:0 0}.tg-sort-header{cursor:pointer}
-.tg-sort-header:after{content:'';float:right;margin-top:7px;border-width:0 5px 5px;border-style:solid;
-  border-color:#404040 transparent;visibility:hidden}
-.tg-sort-header:hover:after{visibility:visible}
-.tg-sort-asc:after,.tg-sort-asc:hover:after,.tg-sort-desc:after{visibility:visible;opacity:.4}
-.tg-sort-desc:after{border-bottom:none;border-width:5px 5px 0}@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}
- </style> 
 
 <script
   src="https://code.jquery.com/jquery-3.5.1.min.js"
@@ -28,7 +9,9 @@
   crossorigin="anonymous">
 </script>
 
-  <script type="text/javascript">
+<link rel = "icon" href="">
+
+<script type="text/javascript">
   var spData = null;
   function doData(json) {
       spData = json.feed.entry;
@@ -75,43 +58,40 @@
       }
       drawRow(table, rowData);
   }
+
   $(document).ready(function(){
       readData($("#data"));
   });
 
-  </script>   
-<script src="https://spreadsheets.google.com/feeds/cells/1Qp0IiBhI8g9PqltdAahunRqvtkmdsrM1SKc1UAhNBYQ/1/public/values?alt=json-in-script&callback=doData"></script>
+</script>
+
+<script src="https://spreadsheets.google.com/feeds/cells/1Qp0IiBhI8g9PqltdAahunRqvtkmdsrM1SKc1UAhNBYQ/1/public/values?alt=json-in-script&callback=doData">
+</script>
 
 <style type="text/css">
-  table {border-collapse: collapse;border-color:#93a1a1;font-family:Arial, sans-serif;font-size:14px; width: 100%;}
+  table {border-collapse: collapse;border-color:#86b300;font-family: Georgia, serif;font-size:14px; width: 100%;}
 
-  th {border: thin solid black; padding: 3px;background-color:#fdf6e3;}
-  td {border: thin solid black; padding: 3px;background-color:#fdf6e3;}
+  td {border: solid white; padding: 3px;background-color:white;color:black;}
 
-  tr.head th {background-color:#657b83; border-bottom: 4px double black;}
-  tr.head td {background-color:#657b83; border-bottom: 4px double black;}
+/*  tr.head td {background-color:#657b83; border-bottom: 4px double black;}*/
 
   span.linetitle {font-weight: bold;}
   div.lineclass {font-style: italic;}
   .title, .result {width: 80%;}
   .notes {width: 15%;}
-  h1, h2 {text-align: center;}
+  h1, h2 {color:white;text-align: center;}
   body {margin: 12px; font-size: 12px;}
-</style>
-
-<style type="text/css" media="print">
-  form {display: none;}
 </style>
   
 <style>
 body {
-  font-family: Calibri;
+  font-family: Georgia, serif;
   font-size: 18px;
   padding: 10px;
 }
 
 a {
-  color: #006600;
+  color: white;
   font-weight: 500;
   -webkit-transition: -webkit-transform 0.2s;
   transition: transform 0.2s;
@@ -152,37 +132,26 @@ a:hover::before {
 
 </head>
 
-<body>
-<!--   <ul>
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#"></a></li>
-  <li><a href="#"></a></li>
-  <li><a href="#"></a></li>
-</ul> -->
+<body  style="background-color: #805500">
   <div>
-  <a href=" https://docs.google.com/spreadsheets/d/1Qp0IiBhI8g9PqltdAahunRqvtkmdsrM1SKc1UAhNBYQ/export?format=pdf&sheet=2"><span>Download Database as PDF</span></a>
+  <a href=" https://docs.google.com/spreadsheets/d/1Qp0IiBhI8g9PqltdAahunRqvtkmdsrM1SKc1UAhNBYQ/export?format=pdf&sheet=2">
+    <span>Download Database as PDF</span></a>
+    <br/>
+    <a href=" https://docs.google.com/spreadsheets/d/1Qp0IiBhI8g9PqltdAahunRqvtkmdsrM1SKc1UAhNBYQ/export?format=xlsx&sheet=2">
+    <span>Download Database as XLSX</span></a>
+    <br/>
+    <a href="https://docs.google.com/spreadsheets/d/1Qp0IiBhI8g9PqltdAahunRqvtkmdsrM1SKc1UAhNBYQ/edit?usp=sharing">
+    <span>Go to Sheets</span></a>
 </div>
 
-<div>
-  <a href=" https://docs.google.com/spreadsheets/d/1Qp0IiBhI8g9PqltdAahunRqvtkmdsrM1SKc1UAhNBYQ/export?format=xlsx&sheet=2"><span>Download Database as XLSX</span></a>
-</div>
-<div>
-  <a href="https://docs.google.com/spreadsheets/d/1Qp0IiBhI8g9PqltdAahunRqvtkmdsrM1SKc1UAhNBYQ/edit?usp=sharing"><span>Go to Sheets</span></a>
-</div>
 <h1>Jalpaiguri Government Engineering College</h1>
 <h2>Computer Science & Engineering, 2022 | Student Database</h2>
-<div class="tg-wrap">
-  <thead>
-  <tr>
-    <th class="tg-eidr"></th>
-    <th class="tg-ul38"></th>
-    <th class="tg-ul38"></th>
-    <th class="tg-ul38"></th>
-    <th class="tg-ul38"></th>
-  </tr>
-  <tbody id="data">
-  </tbody>
-</thead>
+<div>
+  <table>
+    <tbody id="data">
+      
+    </tbody>
+  </table>
 </div>
 </body>
 </html> 
